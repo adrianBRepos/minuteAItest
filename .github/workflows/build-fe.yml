@@ -19,9 +19,9 @@ on:
       DOCKERHUB_TOKEN:
         required: false
       SENTRY_DSN:
-        required: true
+        required: false #true
       POSTHOG_API_KEY:
-        required: true
+        required: false #true
 
 env:
   ECR_REPO_URL: ${{ secrets.AWS_ACCOUNT_ID }}.dkr.ecr.${{ secrets.AWS_REGION }}.amazonaws.com/minute-frontend
