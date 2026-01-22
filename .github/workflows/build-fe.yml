@@ -54,7 +54,7 @@ jobs:
           echo "docker-build-args=\"--build-arg NEXT_PUBLIC_SENTRY_DSN=${SENTRY_DSN} --build-arg NEXT_PUBLIC_POSTHOG_API_KEY=${POSTHOG_API_KEY}\"" >> $GITHUB_OUTPUT
 
   start-runner:
-    uses: i-dot-ai/i-dot-ai-core-github-actions/.github/workflows/start-runner.yml@main
+    uses: adrianBRepos/i-dot-ai-core-github-actions/.github/workflows/start-runner.yml@main #i-dot-ai/i-dot-ai-core-github-actions/.github/workflows/start-runner.yml@main
     needs: set-vars
     permissions: write-all
     with:
