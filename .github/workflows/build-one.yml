@@ -7,9 +7,9 @@ on:
         type: string
     secrets:
       AWS_GITHUBRUNNER_USER_ACCESS_KEY:
-        required: false
+        required: true #false
       AWS_GITHUBRUNNER_USER_SECRET_ID:
-        required: false
+        required: true #false
       AWS_GITHUBRUNNER_PAT:
         required: true
       AWS_REGION:
@@ -53,7 +53,7 @@ jobs:
     with:
       EC2_INSTANCE_TYPE: ${{ needs.set-vars.outputs.ec2-instance-type }}
       RUNNER_SIZE: ${{ needs.set-vars.outputs.runner-size }}
-      USE_OIDC: true
+      USE_OIDC: false #true
     secrets:
       AWS_GITHUBRUNNER_USER_ACCESS_KEY: ${{ secrets.AWS_GITHUBRUNNER_USER_ACCESS_KEY }}
       AWS_GITHUBRUNNER_USER_SECRET_ID: ${{ secrets.AWS_GITHUBRUNNER_USER_SECRET_ID }}
@@ -74,7 +74,7 @@ jobs:
       DOCKER_BUILD_INSTANCE: ${{ needs.set-vars.outputs.docker-build-instance }}
       SERVICE: ${{ inputs.service }}
       COMMIT_HASH: ${{ github.sha }}
-      USE_OIDC: true
+      USE_OIDC: false #true
     secrets:
       AWS_GITHUBRUNNER_PAT: ${{ secrets.AWS_GITHUBRUNNER_PAT}}
       AWS_GITHUBRUNNER_PAT_USER: ${{ secrets.AWS_GITHUBRUNNER_PAT_USER }}
@@ -92,7 +92,7 @@ jobs:
     with:
       RUNNER_LABEL: ${{ needs.start-runner.outputs.label }}
       EC2_INSTANCE_ID: ${{ needs.start-runner.outputs.ec2-instance-id }}
-      USE_OIDC: true
+      USE_OIDC: false #true
     secrets:
       AWS_GITHUBRUNNER_USER_ACCESS_KEY: ${{ secrets.AWS_GITHUBRUNNER_USER_ACCESS_KEY }}
       AWS_GITHUBRUNNER_USER_SECRET_ID: ${{ secrets.AWS_GITHUBRUNNER_USER_SECRET_ID }}
