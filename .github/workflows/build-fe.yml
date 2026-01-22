@@ -85,7 +85,7 @@ jobs:
         uses: i-dot-ai/i-dot-ai-core-github-actions/.github/actions/authenticate-aws@main
         with:
             APP_NAME: ${{ needs.set-vars.outputs.app-name }}
-            USE_OIDC: true
+            USE_OIDC: false #true
             ENVIRONMENT: prod # Looks like it use to default to this anyway
             AWS_REGION: ${{ secrets.AWS_REGION }}
             AWS_ACCOUNT_ID: ${{ secrets.AWS_ACCOUNT_ID }}
@@ -144,7 +144,7 @@ jobs:
     with:
       RUNNER_LABEL: ${{ needs.start-runner.outputs.label }}
       EC2_INSTANCE_ID: ${{ needs.start-runner.outputs.ec2-instance-id }}
-      USE_OIDC: true
+      USE_OIDC: false #true
     secrets:
       AWS_GITHUBRUNNER_USER_ACCESS_KEY: ${{ secrets.AWS_GITHUBRUNNER_USER_ACCESS_KEY }}
       AWS_GITHUBRUNNER_USER_SECRET_ID: ${{ secrets.AWS_GITHUBRUNNER_USER_SECRET_ID }}
