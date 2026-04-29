@@ -1,27 +1,4 @@
-import {
-  AuthApiClient,
-  createAuthUtils,
-  type UserAuthorisationResult,
-} from '@i-dot-ai-npm/utilities'
-
-// Logger configuration
-const logger = console
-
-// Validate required environment variables
-if (!process.env.AUTH_API_URL) {
-  throw new Error('AUTH_API_URL is not defined in the environment variables.')
-}
-
-// Initialize AuthApiClient
-const authClient = new AuthApiClient({
-  appName: process.env.REPO || 'unknown',
-  authApiUrl: process.env.AUTH_API_URL,
-  logger: logger,
-  timeout: 5000,
-})
-
-// Create auth utilities
-const { getUserInfo } = createAuthUtils(authClient, logger)
+import { type UserAuthorisationResult } from '@i-dot-ai-npm/utilities'
 
 export async function parseAuthToken(
   token: string
@@ -32,22 +9,29 @@ export async function parseAuthToken(
   }
 
   try {
-    const userInfo = await getUserInfo(token)
-
-    if (!userInfo) {
-      console.error('Failed to get user info from token')
+    const parts = token.split('.')
+    if (parts.length !== 3) {
+      console.error('Invalid JWT token format')
       return null
     }
 
-    if (!userInfo.email) {
-      console.error('No email found in user info')
+    const payload = JSON.parse(
+      Buffer.from(parts[1], 'base64').toString('utf-8')
+    )
+
+    const email = payload.email
+
+    if (!email) {
+      console.error('No email found in JWT token payload')
       return null
     }
+
+    console.info(`Successfully parsed token for user: ${email}`)
 
     return {
-      email: userInfo.email,
-      isAuthorised: userInfo.isAuthorised,
-      authReason: userInfo.authReason,
+      email: email,
+      isAuthorised: true,
+      authReason: 'ALB_OIDC_AUTHENTICATED',
     }
   } catch (error) {
     console.error('Error parsing auth token:', error)
