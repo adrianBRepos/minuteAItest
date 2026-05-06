@@ -56,7 +56,9 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-app.include_router(api_router)
+# Original: app.include_router(api_router)
+# Modified to add /api/proxy prefix to match frontend API calls through ALB
+app.include_router(api_router, prefix="/api/proxy")
 
 if settings.STORAGE_SERVICE_NAME == "local":
     from common.services.storage_services.local.mock_storage_service import mock_storage_app
