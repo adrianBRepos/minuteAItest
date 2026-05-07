@@ -60,6 +60,10 @@ app.add_middleware(
 # Modified to add /api/proxy prefix to match frontend API calls through ALB
 app.include_router(api_router, prefix="/api/proxy")
 
+# Add healthcheck route directly to app without prefix for ECS/ALB health checks
+from backend.api.routes.health import health_router
+app.include_router(health_router)
+
 if settings.STORAGE_SERVICE_NAME == "local":
     from common.services.storage_services.local.mock_storage_service import mock_storage_app
 
