@@ -27,7 +27,19 @@ export async function middleware(req: NextRequest) {
       const url = new URL(req.url)
       const newPath = `${url.pathname.replace(API_PROXY_PATH, '')}`
       const newUrl = process.env.BACKEND_HOST + newPath + url.search + url.hash
-      return NextResponse.rewrite(newUrl, { request: req })
+      
+      // Forward the OIDC token header to the backend
+      const requestHeaders = new Headers(req.headers)
+      const oidcToken = req.headers.get('x-amzn-oidc-data')
+      if (oidcToken) {
+        requestHeaders.set('x-amzn-oidc-data', oidcToken)
+      }
+      
+      return NextResponse.rewrite(newUrl, { 
+        request: {
+          headers: requestHeaders
+        }
+      })
     }
 
     // Authorise user for frontend access
