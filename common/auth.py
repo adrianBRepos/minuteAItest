@@ -1,17 +1,13 @@
-from i_dot_ai_utilities.auth.auth_api import AuthApiClient, UserAuthorisationResult
+import base64
+import json
+
+from i_dot_ai_utilities.auth.auth_api import UserAuthorisationResult
 
 from common.services.exceptions import MissingAuthTokenError
 from common.settings import get_settings, get_structured_logger
 
 settings = get_settings()
 logger = get_structured_logger()
-
-auth_client = AuthApiClient(
-    app_name=settings.REPO,
-    auth_api_url=settings.AUTH_API_URL,
-    logger=logger,
-    timeout=settings.AUTH_API_REQUEST_TIMEOUT or 5,
-)
 
 
 def __load_dummy_user_info() -> UserAuthorisationResult:
@@ -29,6 +25,7 @@ def __load_dummy_user_info() -> UserAuthorisationResult:
 def get_user_info(auth_token: str | None) -> UserAuthorisationResult:
     """
     Retrieve user metadata, including the user email and whether they should have access to the app.
+    Decodes ALB OIDC JWT token directly.
     """
     if settings.ENVIRONMENT == "local":
         return __load_dummy_user_info()
@@ -37,7 +34,26 @@ def get_user_info(auth_token: str | None) -> UserAuthorisationResult:
         raise MissingAuthTokenError
 
     try:
-        return auth_client.get_user_authorisation_info(auth_token)
+        # Decode JWT token from ALB OIDC
+        parts = auth_token.split('.')
+        if len(parts) != 3:
+            logger.error("Invalid JWT token format")
+            raise ValueError("Invalid JWT token format")
+        
+        payload = json.loads(base64.b64decode(parts[1] + '==').decode('utf-8'))
+        email = payload.get('email')
+        
+        if not email:
+            logger.error("No email found in JWT token payload")
+            raise ValueError("No email in token")
+        
+        logger.info(f"Successfully parsed token for user: {email}")
+        
+        return UserAuthorisationResult(
+            email=email,
+            is_authorised=True,
+            auth_reason="ALB_OIDC_AUTHENTICATED",
+        )
     except Exception:
         logger.exception("Error occurred when authorising user")
         raise
