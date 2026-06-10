@@ -4,18 +4,15 @@ export function Alpha() {
   return (
     <div className="text-sm">
       <div className="flex gap-2 px-6">
-        <div className="flex items-center bg-blue-200 px-2 text-xs font-medium tracking-wider uppercase">
-          Alpha
-        </div>
         <p>
-          This is a new service. Help us improve it and{' '}
+          For advice and support visit our page on the{' '}
           <Link
-            href="https://surveys.publishing.service.gov.uk/s/MAQMR1/"
+            href="https://cccandpcc.sharepoint.com/sites/ICT/SitePages/Minute-AI-transcription-tool.aspx?TeamsCID=9462b575-df48-4956-89a1-553717386789&linkOpenTime=1781087220107"
             className="a inline text-blue-600 underline underline-offset-1 hover:text-blue-800 hover:decoration-3 active:bg-yellow-400 active:text-black"
             target="_blank"
             rel="noopener noreferrer"
           >
-            give your feedback.
+            intranet
           </Link>
         </p>
       </div>
