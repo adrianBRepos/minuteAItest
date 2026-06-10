@@ -1,7 +1,7 @@
 import Link from 'next/link'
 
 export const Footer = () => (
-  <footer className="h-[50px] w-full bg-black px-4 py-2 text-white">
+  <footer className="h-[50px] w-full bg-[#0F4940] px-4 py-2 text-white">
     <div className="mx-auto max-w-7xl">
       <div className="flex items-center justify-between">
         <div className="flex items-center gap-8">
