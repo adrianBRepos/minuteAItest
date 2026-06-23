@@ -17,7 +17,7 @@ export const AudioUploadForm = () => {
         onSubmit={form.handleSubmit(onSubmit)}
         className="mt-6 flex flex-col gap-4"
       >
-        <div className="flex items-center gap-2 rounded-md bg-blue-50 p-3 text-sm text-blue-700">
+        <div className="flex items-center gap-2 rounded-md bg-green-50 p-3 text-sm text-green-700">
           <Info className="size-4 shrink-0" />
           <p>Maximum file size: 5GB</p>
         </div>
@@ -80,7 +80,7 @@ export const AudioUploadForm = () => {
                         {!isDragActive && (
                           <>
                             <div className="text-xs">or</div>
-                            <Button className="rounded-l-full rounded-r-full bg-blue-50 text-blue-700 hover:bg-blue-100">
+                            <Button className="rounded-l-full rounded-r-full bg-green-500 text-white hover:bg-green-600">
                               Choose a file
                             </Button>
                           </>
