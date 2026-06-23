@@ -21,7 +21,7 @@ export default function NewTranscriptPage() {
         href="/new/upload"
         className="flex items-center gap-2 rounded-xl border p-6 hover:bg-blue-100"
       >
-        <div className="rounded bg-blue-200 p-2 text-blue-500">
+        <div className="rounded bg-green-500 p-2 text-white">
           <Upload size={25} />
         </div>
         <div>
@@ -35,7 +35,7 @@ export default function NewTranscriptPage() {
         href="/new/record-virtual"
         className="flex items-center gap-2 rounded-xl border p-6 hover:bg-blue-100"
       >
-        <div className="rounded bg-blue-200 p-2 text-blue-500">
+        <div className="rounded bg-green-500 p-2 text-white">
           <MonitorPlay size={25} />
         </div>
         <div>
@@ -49,7 +49,7 @@ export default function NewTranscriptPage() {
         href="/new/record-audio"
         className="flex items-center gap-2 rounded-xl border p-6 hover:bg-blue-100"
       >
-        <div className="rounded bg-blue-200 p-2 text-blue-500">
+        <div className="rounded bg-green-500 p-2 text-white">
           <Mic size={25} />
         </div>
         <div>
