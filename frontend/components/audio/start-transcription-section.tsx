@@ -23,7 +23,7 @@ export const StartTranscriptionSection = ({
     <div className="mt-4 flex flex-col gap-2">
       <Button
         type="submit"
-        className="w-full bg-blue-500 hover:bg-blue-800 active:bg-yellow-400"
+        className="w-full bg-green-800 hover:bg-green-500 active:bg-yellow-400"
         disabled={
           isPending ||
           !isShowing ||
