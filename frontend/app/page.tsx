@@ -20,7 +20,7 @@ export default function Home() {
         </p>
       </div>
       <Button
-        className="mb-6 w-full bg-blue-500 p-6 hover:bg-blue-800 active:bg-amber-400"
+        className="mb-6 w-full bg-green-800 p-6 hover:bg-green-500 active:bg-amber-400"
         asChild
       >
         <Link href="/new">
