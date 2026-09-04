@@ -146,6 +146,9 @@ class Settings(BaseSettings):
     )
 
     # if using posthog
+    SERVICE_API_KEY: str | None = Field(description="API key for service-to-service access (e.g. OSCAR agent)", default=None)
+    SERVICE_ACCOUNT_EMAIL: str = Field(description="Email used for the service account user", default="service-account@minute.internal")
+
     POSTHOG_API_KEY: str | None = Field(description="PostHog API key for analytics", default=None)
     POSTHOG_HOST: str = Field(description="PostHog service host URL", default="https://eu.i.posthog.com")
 
