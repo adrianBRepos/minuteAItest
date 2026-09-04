@@ -17,15 +17,27 @@ logger = get_structured_logger()
 async def get_current_user(
     session: SQLSessionDep,
     x_amzn_oidc_data: Annotated[str | None, Header()] = None,
+    x_api_key: Annotated[str | None, Header()] = None,
 ) -> User:
     """
     Called on every endpoint to decode JWT passed in every request.
     Gets or creates the user based on the email in the JWT
     Args:
         x_amzn_oidc_data: The incoming JWT from the auth provider, passed via the frontend app
+        x_api_key: Optional API key for service-to-service access
     Returns:
         User: The user matching the username in the token
     """
+    if x_api_key and settings.SERVICE_API_KEY and x_api_key == settings.SERVICE_API_KEY:
+        statement = select(User).where(User.email == settings.SERVICE_ACCOUNT_EMAIL)
+        user = (await session.exec(statement)).first()
+        if not user:
+            user = User(email=settings.SERVICE_ACCOUNT_EMAIL)
+            session.add(user)
+            await session.commit()
+            await session.refresh(user)
+        return user
+        
     authorization: str | None = x_amzn_oidc_data
 
     try:
