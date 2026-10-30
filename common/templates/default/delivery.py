@@ -33,7 +33,7 @@ class AttendeeList(BaseModel):
 
 class Delivery(Template):
     name = "Delivery"
-    category = "Formal Minutes"
+    category = "Standard"
     description = "Formal minutes following the delivery style guide"
     agenda_usage = AgendaUsage.NOT_USED
 
