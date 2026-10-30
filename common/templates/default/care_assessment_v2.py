@@ -21,7 +21,7 @@ settings = get_settings()
 
 class CareAssessmentV2(SimpleTemplate):
     name = "Care Assessment V2"
-    category = "Social Care"
+    category = "Legacy Templates"
     description = "Enhanced Social care assessment template based on Care Act Eligibility Criteria"
     citations_required = True
     agenda_usage = AgendaUsage.NOT_USED
