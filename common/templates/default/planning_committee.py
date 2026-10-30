@@ -9,7 +9,7 @@ from common.types import (
 
 class PlanningCommittee(SectionTemplate):
     name = "Planning Committee"
-    category = "Formal Minutes"
+    category = "Legal and Governance"
     description = "Planning committee minutes template"
     citations_required = True
     agenda_usage = AgendaUsage.REQUIRED
