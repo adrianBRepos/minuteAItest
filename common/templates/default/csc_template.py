@@ -29,7 +29,7 @@ Use the information in curly brackets {} to help you decide what information to 
 
 class EffectivePracticeLCSSupervision(SimpleTemplate):
     name = "CSC - Effective Practice LCS Supervision"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "Supervision template capturing factual updates, reflective practice, and management challenge for children."
     citations_required = True
     agenda_usage = AgendaUsage.NOT_USED
@@ -75,7 +75,7 @@ Record why decisions were reached, not simply what was decided. Expand discussio
 
 class YouthJusticeChildSupervision(SimpleTemplate):
     name = "CSC - Youth Justice Child Supervision"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "Supervision template tailored for Youth Justice cases focusing on victim considerations and safety."
     citations_required = True
     agenda_usage = AgendaUsage.NOT_USED
@@ -129,7 +129,7 @@ Follow this format for the Youth Justice supervision record.
 
 class EarlyHelpTargetedSupportSupervision(SimpleTemplate):
     name = "CSC - Early Help / Targeted Support Supervision"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "Supervision template tailored for Early Help and Targeted Support cases."
     citations_required = True
     agenda_usage = AgendaUsage.NOT_USED
@@ -171,7 +171,7 @@ Follow this format for the Early Help / Targeted Support supervision record.
 
 class CSCCaseNote(SimpleTemplate):
     name = "CSC - Case Note"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "A clean, narrative-focused professional case note with a clear actions section, viewed through a Children's Social Care lens"
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -218,7 +218,7 @@ You should structure the output strictly as follows:
 
 class CSCGeneral(SimpleTemplate):
     name = "CSC - General Meeting"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "Standard meeting summary with key points, decisions, and action items viewed through a Children's Social Care lens"
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -294,7 +294,7 @@ You should structure the minutes with these sections (omit any that aren't relev
 
 class CSCConciseCaseNote(SimpleTemplate):
     name = "CSC - Concise Case Note"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "A concise, bullet-point focused case note for quick review by practitioners."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -339,7 +339,7 @@ Keep the output brief while ensuring all important information and actions are r
 
 class CSCDetailedCaseNote(SimpleTemplate):
     name = "CSC - Detailed Case Note"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "A comprehensive and detailed case note capturing all significant information, decisions, and risks."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -392,7 +392,7 @@ You should structure the output strictly as follows:
 
 class CSCMonthlyConversation(SimpleTemplate):
     name = "CSC - Our Monthly Conversation"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "Monthly conversation template capturing reflection, key priorities, and learning and development."
     citations_required = False
     agenda_usage = AgendaUsage.NOT_USED
@@ -426,7 +426,7 @@ Structure the output strictly as follows:
 
 class CSCAnnualConversation(SimpleTemplate):
     name = "CSC - Our Annual Conversation"
-    category = "Children's Social Care"
+    category = "Children and Young Peoples Services"
     description = "Annual conversation template capturing yearly reflection, objectives for the next 12 months, and learning and development."
     citations_required = False
     agenda_usage = AgendaUsage.NOT_USED
