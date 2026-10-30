@@ -125,7 +125,7 @@ Summing up, THE PRIME MINISTER said that…"""
 
 class Cabinet(SectionTemplate):
     name = "Cabinet"
-    category = "Formal Minutes"
+    category = "Legal and Governance"
     description = "Formal minutes following cabinet meeting structure"
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
