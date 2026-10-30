@@ -28,7 +28,7 @@ Focus on documenting the actual conversation and agreed support/actions. Do not 
 
 class ASCCaseNote(SimpleTemplate):
     name = "ASC - Case Note"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "A clean, narrative-focused professional case note with a clear actions section, viewed through an Adult Social Care lens"
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -75,7 +75,7 @@ You should structure the output strictly as follows:
 
 class ASCGeneral(SimpleTemplate):
     name = "ASC - General Meeting"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Standard meeting summary with key points, decisions, and action items viewed through an Adult Social Care lens"
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -151,7 +151,7 @@ You should structure the minutes with these sections (omit any that aren't relev
 
 class ASCConciseCaseNote(SimpleTemplate):
     name = "ASC - Concise Case Note"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "A concise, bullet-point focused case note for quick review by practitioners."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -196,7 +196,7 @@ Keep the output brief while ensuring all important information and actions are r
 
 class ASCDetailedCaseNote(SimpleTemplate):
     name = "ASC - Detailed Case Note"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "A comprehensive and detailed case note capturing all significant information, decisions, and risks."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -249,7 +249,7 @@ You should structure the output strictly as follows:
 
 class AdultAtRiskSafeguardingMeeting(SimpleTemplate):
     name = "ASC - Adult at Risk Safeguarding Meeting"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Safeguarding minutes template covering risk assessment, adult's wishes, conclusions, and decisions (DBS/MARAC/MAPPA)."
     citations_required = True
     agenda_usage = AgendaUsage.NOT_USED
@@ -291,7 +291,7 @@ Follow this format for the Adult at Risk Safeguarding Meeting minutes. Ensure th
 
 class ASCMonthlyConversation(SimpleTemplate):
     name = "ASC - Our Monthly Conversation"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Monthly conversation template capturing reflection, key priorities, and learning and development."
     citations_required = False
     agenda_usage = AgendaUsage.NOT_USED
@@ -325,7 +325,7 @@ Structure the output strictly as follows:
 
 class ASCAnnualConversation(SimpleTemplate):
     name = "ASC - Our Annual Conversation"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Annual conversation template capturing yearly reflection, objectives for the next 12 months, and learning and development."
     citations_required = False
     agenda_usage = AgendaUsage.NOT_USED
