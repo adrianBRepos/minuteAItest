@@ -10,7 +10,7 @@ from common.types import AgendaUsage
 
 class General(SimpleTemplate):
     name = "General"
-    category = "Common"
+    category = "Standard"
     description = "Standard meeting summary with key points, decisions, and action items"
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
