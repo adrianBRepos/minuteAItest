@@ -23,7 +23,7 @@ Accuracy, understanding, context, and preserving the speaker's intended meaning 
 
 class DictationAndPersonalNotetaking(SimpleTemplate):
     name = "Dictation and Personal Notetaking"
-    category = "General"
+    category = "Standard"
     description = "Accessibility-focused dictation and note-taking assistant capturing transcripts, summaries, actions, and organized notes."
     citations_required = False
     agenda_usage = AgendaUsage.OPTIONAL
