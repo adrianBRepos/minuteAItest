@@ -25,7 +25,7 @@ Focus on documenting the actual conversation and agreed support/actions. Do not 
 
 class ASCAdultContact(SimpleTemplate):
     name = "ASC - Adult Contact"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Adult Contact template capturing subject details, contact routing, and practitioner summary."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -68,7 +68,7 @@ Use the following format, extracting all available relevant information from the
 
 class ASCMentalCapacityAssessment(SimpleTemplate):
     name = "ASC - Mental Capacity Assessment"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Mental Capacity Assessment template covering decision to be assessed, the four-stage capacity test, and Best Interest Decisions."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -132,7 +132,7 @@ Provide evidence for each of the four stages:
 
 class ASCOTBackgroundContactAssessment(SimpleTemplate):
     name = "ASC - OT Background Info and Contact Assessment"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "OT background and initial contact assessment capturing presenting problems, daily living impacts, and visit safety information."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -198,7 +198,7 @@ Use the following format, extracting all available relevant information from the
 
 class ASCOTCoreAssessment(SimpleTemplate):
     name = "ASC - OT Core Assessment"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Occupational Therapy Core Assessment covering ADLs, moving and handling, mobility, health, and goals."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -285,7 +285,7 @@ Note the rating and provide details for each:
 
 class ASCReablementAssessment(SimpleTemplate):
     name = "ASC - Reablement Assessment and Goal Setting"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Reablement assessment focusing on current functional performance, goal setting across ADLs, equipment needs, and outcomes."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -353,7 +353,7 @@ For each category below, state the specific issue/problem area, Current ability 
 
 class ASCReablementProgressReview(SimpleTemplate):
     name = "ASC - Reablement Progress Review"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Reablement progress review focusing on functional performance progress, equipment, and outcomes."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -405,7 +405,7 @@ For each category below, state the specific issue/problem area, Original Assesse
 
 class ASCReviewOfCareAndSupportPlan(SimpleTemplate):
     name = "ASC - Review of Care and Support Plan"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Review of an existing care and support plan, focusing on personal outcomes, wellbeing, risks, and next steps."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -467,7 +467,7 @@ Use the following format, extracting all available relevant information from the
 
 class ASCSensoryRehabAssessment(SimpleTemplate):
     name = "ASC - Sensory Rehab Assessment and Goal Setting"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Sensory rehabilitation assessment mapping out goals and functional performance for mobility, communication, and ADLs."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
@@ -527,7 +527,7 @@ For each category below, state the specific issue/problem area discussed, Tasks,
 
 class ASCSocialCareAssessment(SimpleTemplate):
     name = "ASC - Adult Social Care Assessment"
-    category = "Adults' Social Care"
+    category = "Adult Services, Commissioning and Public Health"
     description = "Comprehensive adult social care assessment template covering current situation, risks, informal carers, and support outcomes."
     citations_required = True
     agenda_usage = AgendaUsage.OPTIONAL
